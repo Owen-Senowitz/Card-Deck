@@ -8,7 +8,6 @@ public class Main {
 
         ArrayList<Card> d = Deck.newDeck();
         Collections.sort(d);
-
         for(Card c : d){
             System.out.println(c);
         }

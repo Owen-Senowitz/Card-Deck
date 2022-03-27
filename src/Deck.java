@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Deck extends Card {
 
@@ -21,5 +22,18 @@ public class Deck extends Card {
 
     public static ArrayList<Card> newDeck() {
         return new ArrayList<Card>(Deck.protoDeck);
+    }
+    public void shuffle()
+    {
+        Random ranNum = new Random();
+        int n = Deck.newDeck().size();
+        while (n > 1)
+        {
+            n--;
+            int k = ranNum.nextInt(n + 1);
+            Card value = Deck.newDeck().get(k);
+            Deck.newDeck().set(k, Deck.newDeck().get(n));
+            Deck.newDeck().set(n, value);
+        }
     }
 }
